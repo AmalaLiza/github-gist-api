@@ -19,7 +19,7 @@ const startServer = (module) => {
     hot: true,
     historyApiFallback: true,
     stats: { colors: true },
-    proxy: { '/rest/*': module.proxy, '/ide-web-socket': module.proxy },
+    proxy: { '/gists':'https://api.github.com/ '},
   }).listen(port, '0.0.0.0', (err) => {
     if (err) { console.error(err); }
 

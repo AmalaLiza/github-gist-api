@@ -1,20 +1,45 @@
-import { createStore, applyMiddleware, compose, combineReducers } from 'redux';
-import thunkMiddleware from 'redux-thunk';
-import { mainReducer } from './reducers/mainReducer';
+import {createStore, applyMiddleware, compose} from 'redux';
+import createSagaMiddleware from 'redux-saga';
+import createReducer from './reducers';
+import mySaga from './sagas/loadPublicGistsOfUser.saga';
+import {fromJS} from 'immutable';
 
-/* Combine Reducers */
-const appReducer = combineReducers(Object.assign({}, {
-  main: mainReducer,
-}));
+const sagaMiddleware = createSagaMiddleware();
 
-const rootReducer = (state, action) => {
-  return appReducer(state, action);
-};
+function getInitialStateFromLocalStorage() {
+  const applicationState = localStorage.getItem('applicationState');
 
-const enhancer = compose(
-  applyMiddleware(thunkMiddleware),
-);
+  if (!applicationState)
+    return undefined;
 
-export default function configureStore(initialState) {
-  return createStore(rootReducer, initialState, enhancer);
+  return undefined;
+}
+
+export default function configureStore() {
+
+  const composeEnhancers =
+    process.env.NODE_ENV !== 'production' &&
+    typeof window === 'object' &&
+    window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ ?
+      window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({
+        // shouldHotReload: false
+        deserializeState: (state) => {
+          return Object.keys(state).reduce(function (previous, current) {
+            previous[current] = fromJS(state[current]);
+            return previous;
+          }, {});
+        }
+      }) : compose;
+
+  const enhancer = composeEnhancers(applyMiddleware(sagaMiddleware));
+
+  const store = createStore(createReducer(), getInitialStateFromLocalStorage(), enhancer);
+
+  //store.runSaga = sagaMiddleware.run;
+  sagaMiddleware.run(mySaga)
+  // Async reducer registry
+  store.asyncReducers = {};
+
+
+  return store;
 }
