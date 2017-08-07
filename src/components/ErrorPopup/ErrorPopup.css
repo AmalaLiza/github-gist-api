@@ -1,0 +1,14 @@
+.wrapper {
+  position: absolute;
+  background: rgba(255, 110, 105, 0.43);
+  width: 100%;
+  height: 40px;
+  text-align: center;
+  top: 0;
+}
+
+.error{
+  color: #ffffff;
+  display: block;
+  margin-top: 12px;
+}

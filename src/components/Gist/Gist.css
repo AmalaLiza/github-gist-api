@@ -1,0 +1,36 @@
+.gist {
+  width: 380px;
+  min-height: 150px;
+  background-color: #fcffff;
+  border-radius: 3px;
+  padding: 10px;
+  margin: 10px;
+}
+
+.detailsContainer{
+  height: 120px;
+}
+
+.gistFooter {
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.tagWrapper {
+  float: left;
+}
+
+.forksWrapper {
+  float: right;
+}
+
+.user {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  background-color: #515151;
+  color: #ffffff;
+  margin: 0 2px 0 2px;
+}

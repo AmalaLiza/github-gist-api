@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import styles from '../PublicGists/PublicGists.css';
-import { loadAllForks } from '../../actions/action-creator';
+import { GistDetails } from './GistDetails';
+import { Avatar } from '../Avatar/Avatar';
+import { Tag } from '../Tag/Tag';
 import { connect } from 'react-redux';
-import { selectStore } from '../selectStore';
+import { loadAllForks } from '../../actions/action-creator';
+import { selectGists } from '../PublicGists/gists.selector';
+import styles from './Gist.css';
 
 const getTag = (type) => {
   type = type.split('/');
@@ -17,7 +19,6 @@ class Gist extends Component {
 
   constructor(props, context) {
     super(props, context);
-    this.state = {};
   }
 
   componentWillMount() {
@@ -29,30 +30,29 @@ class Gist extends Component {
     const { gist } = this.props;
 
     return <div className={styles.gist}>
-      <div>
-        <span className='bold'>Description: </span>
-        <span>{gist.get('description')}</span>
-      </div>
-      <div>
-        <span className='bold'>Created At:</span>
-        <span> {gist.get('created_at')}</span>
-      </div>
-      <div>
-        <span className='bold'>Gist URL:</span>
-        <span> {gist.get('url')}</span>
-      </div>
+
+      <GistDetails className={styles.detailsContainer}
+                   gist={gist} />
+
       <div className={styles.gistFooter}>
         <div className={styles.tagWrapper}>
+
           {gist.get('files').toArray().map((file, index) => {
-            if (index < 3) return <span className={styles.tag}>{getTag(file.get('type'))}</span>;
+            if (index < 3) return <Tag value={getTag(file.get('type'))}>
+            </Tag>;
           })}
+
         </div>
+
         {gist.get('forks') && gist.get('forks').size ? <div className={styles.forksWrapper}>
-          {gist.get('forks').map((fork, index) => <img className={styles.user}
-                                                       onClick={() => window.open(fork.getIn(['html_url']))}
-                                                       src={fork.getIn(['owner', 'avatar_url'])}>
-          </img>)}
+
+          {gist.get('forks').map((fork, index) => <Avatar className={styles.user}
+                                                          onClick={() => window.open(fork.getIn(['html_url']))}
+                                                          src={fork.getIn(['owner', 'avatar_url'])}>
+          </Avatar>)}
+
         </div> : null}
+
       </div>
     </div>;
   }
@@ -61,6 +61,6 @@ class Gist extends Component {
 Gist.propTypes = {};
 Gist.defaultProps = {};
 
-const mapStateToProps = state => selectStore(state);
+const mapStateToProps = state => selectGists(state);
 
 export default connect(mapStateToProps)(Gist);

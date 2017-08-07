@@ -1,20 +1,22 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import styles from '../PublicGists/PublicGists.css';
+import styles from './UserDetails.css';
+import { Avatar } from '../Avatar/Avatar';
 
 class UserDetails extends Component {
 
   constructor(props, context) {
     super(props, context);
-    this.state = {};
   }
 
   render() {
     const { user } = this.props;
 
     return <div className={styles.userDetails}>
-      <img className={styles.avatar} src={user.get('avatar_url')}>
-      </img>
+
+      <Avatar className={styles.avatar}
+              src={user.get('avatar_url')}>
+      </Avatar>
+
       <div className={styles.detailsWrapper}>
         <div>
           <span className='bold'>Name: </span>
@@ -24,11 +26,6 @@ class UserDetails extends Component {
           <span className='bold'>User Url: </span>
           <span>{user.get('url')}</span>
         </div>
-        <div>
-          <span className='bold'>Gists Url: </span>
-          <span>{user.get('gists_url')}</span>
-        </div>
-
       </div>
     </div>;
   }

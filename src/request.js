@@ -15,11 +15,11 @@ export default function request(url, options) {
     credentials: 'same-origin',
     ...options
   }).then(response => {
-    if (response.status !== 502) {
+    if (response.status === 200 && response.length !== 0) {
       return response.json();
     }
 
-    throw new Error('Could not connect to server');
+    throw response.statusText;
   }).then(response => {
     return response;
   });

@@ -1,0 +1,20 @@
+.userDetails {
+  background-color: rgba(64, 181, 181, 0.77);
+  border-radius: 3px;
+  display: block;
+  width: 500px;
+  margin: 0 auto 50px;
+  padding: 15px 20px;
+}
+
+.detailsWrapper {
+  display: inline-block;
+}
+
+.avatar {
+  width: 50px;
+  height: 50px;
+  background-color: #fcffff;
+  color: #000000;
+  margin-right: 10px;
+}
