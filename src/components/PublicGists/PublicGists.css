@@ -1,0 +1,100 @@
+.searchBox {
+  width: 530px;
+  height: 35px;
+  margin: 150px auto 50px;
+  display: block;
+  border: solid #f9f8f8 1px;
+  border-radius: 3px;
+  font-size: 15px;
+}
+
+input::placeholder {
+  font-size: 14px;
+  padding: 4px;
+}
+
+.userDetails{
+  background-color: rgba(64, 181, 181, 0.77);
+  border-radius: 3px;
+  display: block;
+  width: 500px;
+  margin: 0 auto 50px;
+  padding: 15px 20px;
+}
+
+.detailsWrapper{
+  display: inline-block;
+}
+
+.avatar{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fcffff;
+  color: black;
+  margin-right: 10px;
+}
+
+
+.gistWrapper {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-top: 10px;
+}
+
+.gist {
+  width: 380px;
+  min-height: 150px;
+  background-color: #fcffff;
+  border-radius: 3px;
+  padding: 10px;
+  margin: 10px;
+}
+
+.gistCount{
+  display: block;
+  color: #f9f8f8;
+  border-bottom: cadetblue solid 1px;
+}
+
+.gistFooter {
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  box-sizing: border-box;
+  padding-top: 45px;
+}
+
+.tagWrapper {
+  float: left;
+}
+
+.forksWrapper {
+  float: right;
+}
+
+.tag {
+  background-color: #3a8dc7;
+  margin: 2px;
+  padding: 2px 7px;
+  border-radius: 2px;
+  font-size: 10px;
+  color: #fff;
+}
+
+.user {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #515151;
+  color: #ffffff;
+  margin: 0 2px 0 2px;
+}

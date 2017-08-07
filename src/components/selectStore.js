@@ -1,6 +1,6 @@
-
 export const selectStore = state => {
-  return {
-    notifications: {}
-  };
+  return ({
+    gists: state.gistsApi.get('publicGists'),
+    user: state.gistsApi.get('user'),
+  });
 };

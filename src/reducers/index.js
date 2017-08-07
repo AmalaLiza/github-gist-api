@@ -1,9 +1,9 @@
 import {combineReducers} from 'redux';
-import { mainReducer } from './mainReducer';
+import { gistsReducer } from './gistsReducer';
 
 export default function createReducer(asyncReducers) {
   const appReducer = combineReducers({
-    main: mainReducer,
+    gistsApi: gistsReducer,
     //write synchronous reducers above this line
     ...asyncReducers
   });

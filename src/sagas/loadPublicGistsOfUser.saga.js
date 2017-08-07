@@ -1,11 +1,11 @@
-import { call, fork, take, cancel, put } from 'redux-saga/effects';
+import { call, take, cancel, put } from 'redux-saga/effects';
 import request from '../request';
 import { loadPublicGistsOfUserSuccess, loadPublicGistsOfUserError } from '../actions/action-creator';
 import {
+  BASE_URL,
   ACTION_LOAD_PUBLIC_GISTS,
-  URL_LOAD_PUBLIC_GISTS,
 } from '../actions/actions-constants';
-
+import { normalizeItems } from '../utils';
 
 /**
  * Makes GET request
@@ -14,10 +14,11 @@ import {
 export function* loadPublicGistsOfUser(action) {
 
   try {
+
+    const URL_LOAD_PUBLIC_GISTS = BASE_URL + '/users/' + action.userName + '/gists';
     const response = yield call(request, URL_LOAD_PUBLIC_GISTS, { method: 'GET' });
 
-    console.log(response);
-    //yield put(loadPublicGistsOfUserSuccess(normalizeItems(response.result, 'eaiId')));
+    yield put(loadPublicGistsOfUserSuccess(normalizeItems(response, 'id'), response[0].owner));
   } catch (error) {
     yield put(loadPublicGistsOfUserError(error));
     console.log(error);
@@ -25,18 +26,11 @@ export function* loadPublicGistsOfUser(action) {
 }
 
 /**
- * watches for ACTION_LOAD_PUBLIC_GISTS and calls loadPublicGistsOfUser
- */
-export function* loadPublicGistsOfUserWatcher() {
-  while (true) {
-    yield call(loadPublicGistsOfUser, yield take('gga/LOAD_PUBLIC_GISTS'));
-  }
-}
-
-/**
  * Manages watcher lifecycle
  */
-export default function* mySaga() {
-  // Fork watcher so we can continue execution
-  yield fork(loadPublicGistsOfUserWatcher);
+export default function* loadPublicGistsOfUserSaga() {
+  while (true) {
+    const action = yield take(ACTION_LOAD_PUBLIC_GISTS);
+    yield call(loadPublicGistsOfUser, action);
+  }
 }

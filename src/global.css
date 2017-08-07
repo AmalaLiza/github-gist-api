@@ -1,0 +1,9 @@
+body {
+  background-color: #2C343A;
+  font-size: 14px;
+  font-family: 'PT Sans', sans-serif;
+}
+
+.bold {
+  font-weight: 700;
+}
