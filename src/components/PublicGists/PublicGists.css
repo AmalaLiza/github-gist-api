@@ -1,29 +1,36 @@
 .searchBox {
-  width: 530px;
-  height: 30px;
-  margin: 150px auto 50px;
   display: block;
-  border: solid #f9f8f8 1px;
   border-radius: 3px;
-  font-size: 14px;
+  border: none;
+  padding: 40px;
+  outline: none;
+  margin-top: 30px;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 100px;
+  letter-spacing: -.035em!important;
+
 }
 
-input::placeholder {
-  font-size: 12px;
-  padding: 4px;
-  opacity: 50;
+.searchHint {
+  color: #c3c3c3;
+  font-size: 14px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  vertical-align: top;
+  padding: 40px;
 }
 
 .gistWrapper {
   display: flex;
-  align-items: center;
   flex-wrap: wrap;
-  justify-content: center;
   padding-top: 10px;
 }
 
 .gistCount {
   display: block;
-  color: #f9f8f8;
+  color: #000000;
+  margin: 20px 10px 0 10px;
   border-bottom: rgba(31, 121, 185, 0.77) solid 1px;
 }

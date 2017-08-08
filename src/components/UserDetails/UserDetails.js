@@ -18,13 +18,13 @@ class UserDetails extends Component {
       </Avatar>
 
       <div className={styles.detailsWrapper}>
-        <div>
+        <div className={styles.properties}>
           <span className='bold'>Name: </span>
           <span>{user.get('login')}</span>
         </div>
         <div>
           <span className='bold'>User Url: </span>
-          <span>{user.get('url')}</span>
+          <span className='url' onClick={() => window.open(user.get('url'))}>{user.get('url')}</span>
         </div>
       </div>
     </div>;

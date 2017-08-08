@@ -7,7 +7,7 @@ import { loadPublicGistsOfUser } from '../../actions/action-creator';
 import { selectGists } from './gists.selector';
 import styles from './PublicGists.css';
 
-const GistCount = ({ count }) => <div className={styles.gistCount}>GISTS ({count})</div>;
+const GistCount = ({ count }) => <div className={`${styles.gistCount} bold`}>GISTS ({count})</div>;
 
 const GistWrapper = ({ className, children }) => <div className={className}>
   {children}
@@ -28,11 +28,10 @@ class PublicGists extends Component {
     const { gists, user } = this.props;
 
     return <PublicGistsWrapper>
+      <span className={styles.searchHint}>Search users' gist by typing and hit enter</span>
       <TextField type='text'
-                 autoFocus={true}
                  className={styles.searchBox}
-                 onEnter={(value) => this.props.dispatch(loadPublicGistsOfUser(value))}
-                 placeHolder='Search here' />
+                 onEnter={(value) => this.props.dispatch(loadPublicGistsOfUser(value))} />
 
       {gists.size ? <UserDetails user={user} /> : null}
       {gists.size ? <GistCount count={gists.size} /> : null}

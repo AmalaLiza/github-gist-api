@@ -35,9 +35,7 @@ export default class TextField extends React.Component {
       id,
       type,
       className,
-      placeHolder,
       defaultValue,
-      autoFocus,
       value,
     } = this.props;
 
@@ -48,9 +46,8 @@ export default class TextField extends React.Component {
                    defaultValue={defaultValue}
                    value={value}
                    onKeyDown={this.handleKeyDown}
-                   placeholder={placeHolder}
                    onChange={this.handleChange}
-                   autoFocus={autoFocus}
+                   autoFocus={true}
       />
     );
   }

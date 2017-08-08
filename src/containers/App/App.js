@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import ErrorPopup from '../../components/ErrorPopup/ErrorPopup';
 import PublicGists from '../../components/PublicGists/PublicGists';
-import styles from './App.css';
-import '../../global.css';
-import { connect } from 'react-redux';
 import { getError } from '../../components/PublicGists/gists.selector';
 import { hideError } from '../../actions/action-creator';
+import '../../global.css';
 
 class App extends Component {
 
@@ -15,13 +14,13 @@ class App extends Component {
   }
 
   hideError() {
-      this.props.dispatch(hideError())
+    this.props.dispatch(hideError());
   }
 
   render() {
 
     return (
-      <div className={styles.wrapper}>
+      <div>
         <PublicGists />
         {this.props.error ? <ErrorPopup error={this.props.error}
                                         hideError={this.hideError} /> : null}

@@ -1,13 +1,14 @@
 .gist {
   width: 380px;
   min-height: 150px;
-  background-color: #fcffff;
+  background-color: rgba(247, 247, 247, 0.71);
   border-radius: 3px;
   padding: 10px;
   margin: 10px;
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.13)
 }
 
-.detailsContainer{
+.detailsContainer {
   height: 120px;
 }
 
@@ -33,4 +34,17 @@
   background-color: #515151;
   color: #ffffff;
   margin: 0 2px 0 2px;
+}
+
+.label {
+  float: left;
+  width: 105px;
+  display: inline-block;
+}
+
+.value {
+  float: left;
+  width: calc(100% - 105px);
+  display: inline-block;
+  word-break: break-word;
 }
