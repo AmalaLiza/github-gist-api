@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Gist from '../Gist/Gist';
 import UserDetails from '../UserDetails/UserDetails';
@@ -7,7 +8,10 @@ import { loadPublicGistsOfUser } from '../../actions/action-creator';
 import { selectGists } from './gists.selector';
 import styles from './PublicGists.css';
 
-const GistCount = ({ count }) => <div className={`${styles.gistCount} bold`}>GISTS ({count})</div>;
+const GistCount = ({ count }) => <div className={`${styles.gistCount} bold`}>GISTS ({count})
+  <div className={styles.underline}>
+  </div>
+</div>;
 
 const GistWrapper = ({ className, children }) => <div className={className}>
   {children}
@@ -32,6 +36,8 @@ class PublicGists extends Component {
       <TextField type='text'
                  className={styles.searchBox}
                  onEnter={(value) => this.props.dispatch(loadPublicGistsOfUser(value))} />
+      {gists.size ? <div className={styles.inputBorder}>
+      </div> : null}
 
       {gists.size ? <UserDetails user={user} /> : null}
       {gists.size ? <GistCount count={gists.size} /> : null}
@@ -46,6 +52,18 @@ class PublicGists extends Component {
     </PublicGistsWrapper>;
   }
 }
+
+PublicGists.propTypes = {
+  /**
+   * Data to load gists components
+   */
+  gists: PropTypes.object.isRequired,
+
+  /**
+   * Data to load user details
+   */
+  user: PropTypes.object.isRequired,
+};
 
 const mapStateToProps = state => selectGists(state);
 

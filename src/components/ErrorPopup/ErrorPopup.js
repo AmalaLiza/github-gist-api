@@ -26,7 +26,12 @@ export default class ErrorPopup extends React.Component {
 
 ErrorPopup.propTypes = {
   /**
-   * class name for wrapper
+   * Function to hide error
    */
-  wrapperClass: PropTypes.string,
+  hideError: PropTypes.func.isRequired,
+
+  /**
+   * Error value
+   */
+  error: PropTypes.string.isRequired,
 };

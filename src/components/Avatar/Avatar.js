@@ -1,7 +1,28 @@
 import React from 'react';
-import styles from './Avatar.css';
+import PropTypes from 'prop-types';
 
-export const Avatar = ({ className, onClick, src }) => <img className={`${className} ${styles.avatar}`}
-                                                            onClick={onClick}
-                                                            src={src}>
+// Stateless component
+const Avatar = ({ className, onClick, src }) => <img className={className}
+                                                     onClick={onClick}
+                                                     src={src}>
 </img>;
+
+export default Avatar;
+
+Avatar.propTypes = {
+
+  /**
+   * class name for avatar
+   */
+  className: PropTypes.string.isRequired,
+
+  /**
+   * Callback to handle on avatar click
+   */
+  onClick: PropTypes.func,
+
+  /**
+   * URL to load the avatar
+   */
+  src: PropTypes.string,
+};

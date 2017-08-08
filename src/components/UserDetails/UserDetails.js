@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import styles from './UserDetails.css';
-import { Avatar } from '../Avatar/Avatar';
+import Avatar from '../Avatar/Avatar';
 
 class UserDetails extends Component {
 
@@ -19,12 +19,13 @@ class UserDetails extends Component {
 
       <div className={styles.detailsWrapper}>
         <div className={styles.properties}>
-          <span className='bold'>Name: </span>
-          <span>{user.get('login')}</span>
+          <span>Name : </span>
+          <span className={styles.value}>{user.get('login')}</span>
         </div>
         <div>
-          <span className='bold'>User Url: </span>
-          <span className='url' onClick={() => window.open(user.get('url'))}>{user.get('url')}</span>
+          <span>User URL : </span>
+          <span className={`${styles.value} url`}
+                onClick={() => window.open(user.get('url'))}>{user.get('url')}</span>
         </div>
       </div>
     </div>;

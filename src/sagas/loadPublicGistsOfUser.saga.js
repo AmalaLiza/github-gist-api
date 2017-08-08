@@ -1,23 +1,27 @@
-import { call, take, cancel, put } from 'redux-saga/effects';
+import { call, take, put } from 'redux-saga/effects';
 import request from '../request';
-import { loadPublicGistsOfUserSuccess, loadPublicGistsOfUserError } from '../actions/action-creator';
+import { normalizeItems } from '../utils';
+import {
+  loadPublicGistsOfUserSuccess,
+  loadPublicGistsOfUserError,
+} from '../actions/action-creator';
 import {
   BASE_URL,
   ACTION_LOAD_PUBLIC_GISTS,
 } from '../actions/actions-constants';
-import { normalizeItems } from '../utils';
 
 /**
  * Makes GET request
  * @returns {*}
  */
+
 export function* loadPublicGistsOfUser(action) {
 
   try {
 
     const URL_LOAD_PUBLIC_GISTS = BASE_URL + '/users/' + action.userName + '/gists';
-    //let response = yield call(request, URL_LOAD_PUBLIC_GISTS, { method: 'GET' });
-    let response = [
+    let response = yield call(request, URL_LOAD_PUBLIC_GISTS, { method: 'GET' });
+    /*let response = [
         {
           "url": "https://api.github.com/gists/b4f77f4f0d6138f3032baf370928b8bf",
           "forks_url": "https://api.github.com/gists/b4f77f4f0d6138f3032baf370928b8bf/forks",
@@ -403,7 +407,7 @@ export function* loadPublicGistsOfUser(action) {
           },
           "truncated": false
         }
-      ];
+      ];*/
 
     if (response.length === 0)
       yield put(loadPublicGistsOfUserError('No Gists Found'));
@@ -418,6 +422,7 @@ export function* loadPublicGistsOfUser(action) {
 /**
  * Manages watcher lifecycle
  */
+
 export default function* loadPublicGistsOfUserSaga() {
   while (true) {
     const action = yield take(ACTION_LOAD_PUBLIC_GISTS);

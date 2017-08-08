@@ -1,9 +1,10 @@
 import { createStore, applyMiddleware, compose } from 'redux';
 import createSagaMiddleware from 'redux-saga';
+import { fromJS } from 'immutable';
 import createReducer from './reducers';
 import sagas from '../src/saga';
-import { fromJS } from 'immutable';
 
+//Create middleware for sagas.
 const sagaMiddleware = createSagaMiddleware();
 
 export default function configureStore() {
@@ -24,9 +25,10 @@ export default function configureStore() {
 
   const enhancer = composeEnhancers(applyMiddleware(sagaMiddleware));
 
+  //Creating the redux-store from reducers and enhancers.
   const store = createStore(createReducer(), enhancer);
 
-  //store.runSaga = sagaMiddleware.run;
+  //Run each saga
   sagas.forEach(saga => sagaMiddleware.run(saga));
   store.runSaga = sagaMiddleware.run;
   // Async reducer registry

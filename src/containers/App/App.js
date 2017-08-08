@@ -13,6 +13,11 @@ class App extends Component {
     this.hideError = this.hideError.bind(this);
   }
 
+  /**
+   * Function to hide error component
+   * It dispatches action to store to hide error.
+   **/
+
   hideError() {
     this.props.dispatch(hideError());
   }
@@ -28,9 +33,6 @@ class App extends Component {
     );
   }
 }
-
-App.propTypes = {};
-App.defaultProps = {};
 
 const mapStateToProps = state => getError(state);
 

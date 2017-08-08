@@ -1,12 +1,16 @@
-import { call, fork, take, cancel, put } from 'redux-saga/effects';
+import { call, fork, take, put } from 'redux-saga/effects';
 import request from '../request';
-import { loadForksSuccess, loadForksError } from '../actions/action-creator';
+import {
+  loadForksSuccess,
+  loadForksError,
+} from '../actions/action-creator';
 import { ACTION_LOAD_FORKS } from '../actions/actions-constants';
 
 /**
  * Makes GET request
  * @returns {*}
  */
+
 export function* loadForks(action) {
   try {
     const URL_LOAD_FORKS = action.payload.url;
@@ -21,6 +25,7 @@ export function* loadForks(action) {
 /**
  * Manages watcher lifecycle
  */
+
 export default function* loadForksSaga() {
   while (true) {
     const action = yield take(ACTION_LOAD_FORKS);

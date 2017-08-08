@@ -2,10 +2,10 @@ import { fromJS } from 'immutable';
 import {
   ACTION_LOAD_PUBLIC_GISTS_SUCCESS,
   ACTION_LOAD_FORKS_SUCCESS,
+  ACTION_LOAD_PUBLIC_GISTS_ERROR,
+  ACTION_LOAD_FORKS_ERROR,
+  ACTION_HIDE_ERROR,
 } from '../actions/actions-constants';
-import { ACTION_LOAD_PUBLIC_GISTS_ERROR } from '../actions/actions-constants';
-import { ACTION_LOAD_FORKS_ERROR } from '../actions/actions-constants';
-import { ACTION_HIDE_ERROR } from '../actions/actions-constants';
 
 const initialState = fromJS({
   user: {},

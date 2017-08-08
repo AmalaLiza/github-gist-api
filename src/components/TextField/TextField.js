@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 
 export default class TextField extends React.Component {
 
-  /* istanbul ignore next */
   constructor(props, context) {
     super(props, context);
 
@@ -11,6 +10,9 @@ export default class TextField extends React.Component {
     this.handleKeyDown = this.handleKeyDown.bind(this);
   }
 
+  /**
+   * Function to handle on change event of input box.
+   **/
   handleChange(event) {
     if (this.props.onChange) {
       let value = event.target.value;
@@ -22,6 +24,11 @@ export default class TextField extends React.Component {
     }
   }
 
+  /**
+   * Function to handle on key down event of input box.
+   * Handles on enter functionality.
+   * @param event
+   **/
   handleKeyDown(event) {
     if (event.keyCode === 13 && this.props.onEnter) {
       this.props.onEnter(event.target.value, event);
@@ -41,7 +48,6 @@ export default class TextField extends React.Component {
 
     return (<input type={type}
                    id={id}
-                   ref={ref => this.input = ref}
                    className={className}
                    defaultValue={defaultValue}
                    value={value}
@@ -62,10 +68,6 @@ TextField.propTypes = {
    * Class name for the component
    */
   className: PropTypes.string,
-  /**
-   * Text to be shown when no input is present
-   */
-  placeHolder: PropTypes.any,
   /**
    * Callback for on input change
    */

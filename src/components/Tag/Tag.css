@@ -1,8 +1,9 @@
 .tag {
-  background-color: rgba(31, 121, 185, 0.77);
-  margin: 2px;
-  padding: 2px 7px;
-  border-radius: 2px;
+  background-color: #297ED6;
+  margin: 3px;
+  padding: 4px 10px;
+  border-radius: 5px;
   font-size: 10px;
   color: #ffffff;
+  text-transform: uppercase;
 }

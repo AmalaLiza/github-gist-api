@@ -1,9 +1,6 @@
 .userDetails {
-  background-color: rgba(247, 247, 247, 0.71);
   padding: 40px;
-  margin: 20px 10px 0 10px;
   display: inline-block;
-  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.13);
 }
 
 .detailsWrapper {
@@ -17,8 +14,13 @@
   height: 100px;
   background-color: #fcffff;
   float: left;
+  border-radius: 8px;
 }
 
 .properties {
   padding-bottom: 5px;
+}
+
+.value {
+  margin-left: 5px;
 }

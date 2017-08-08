@@ -1,26 +1,26 @@
 .gist {
-  width: 380px;
-  min-height: 150px;
-  background-color: rgba(247, 247, 247, 0.71);
-  border-radius: 3px;
+  width: 400px;
+  min-height: 200px;
+  background-color: #FFFFFF;
+  border-radius: 8px;
   padding: 10px;
-  margin: 10px;
-  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.13)
+  color: #24292E;
+  margin: 10px 30px 20px 0px;
 }
 
 .detailsContainer {
-  height: 120px;
+  height: 130px;
+  padding: 15px;
 }
 
 .gistFooter {
-  position: relative;
-  bottom: 0;
-  width: 100%;
-  box-sizing: border-box;
+  padding-top: 14px;
+  border-top: 1px solid rgba(36, 41, 46, 0.5);
 }
 
 .tagWrapper {
   float: left;
+  padding-left: 15px;
 }
 
 .forksWrapper {
@@ -40,11 +40,13 @@
   float: left;
   width: 105px;
   display: inline-block;
+  padding-bottom: 10px;
 }
 
 .value {
   float: left;
   width: calc(100% - 105px);
   display: inline-block;
+  padding-bottom: 10px;
   word-break: break-word;
 }
