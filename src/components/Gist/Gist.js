@@ -22,6 +22,7 @@ class Gist extends Component {
   }
 
   componentWillMount() {
+    console.log(this.props.gist.get('forks_url'));
     this.props.dispatch(loadAllForks(this.props.gist.get('forks_url'), this.props.gist.get('id')));
   }
 
