@@ -24,7 +24,6 @@ export function* loadForks(action) {
 export default function* loadForksSaga() {
   while (true) {
     const action = yield take(ACTION_LOAD_FORKS);
-    console.log(action);
     yield fork(loadForks, action);
   }
 }
