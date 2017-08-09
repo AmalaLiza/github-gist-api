@@ -15,7 +15,8 @@ const GistDetails = ({ gist, className }) => <div className={className}>
   </div>
   <div>
     <span className={styles.label}>Gist URL :</span>
-    <span className={styles.value}> {gist.get('url')}</span>
+    <span className={`${styles.value} url`}
+          onClick={() => window.open(gist.get('html_url'))}> {gist.get('html_url')}</span>
   </div>
 </div>;
 

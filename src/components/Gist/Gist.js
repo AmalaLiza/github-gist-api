@@ -4,10 +4,10 @@ import PropTypes from 'prop-types';
 import GistDetails from './GistDetails';
 import Avatar from '../Avatar/Avatar';
 import Tag from '../Tag/Tag';
+import List from './List';
 import { loadAllForks } from '../../actions/action-creator';
 import { selectGists } from '../PublicGists/gists.selector';
 import styles from './Gist.css';
-import List from './List';
 
 /**
  * Function to get tag from file type

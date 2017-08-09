@@ -13,5 +13,5 @@ export const normalizeItems = (items, idAttribute) => normalize(items || [], [ne
 
 
 export const getDate = (date) => {
-  return `${new Date(date).getDate()}-${new Date(date).getDay()}-${new Date(date).getFullYear()}`;
+  return `${new Date(date).getDate()}-${new Date(date).getDay()}-${new Date(date).getFullYear()} ${new Date(date).getHours()}:${new Date(date).getMinutes()} `;
 };
