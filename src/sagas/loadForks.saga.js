@@ -17,7 +17,6 @@ export function* loadForks(action) {
     const response = yield call(request, URL_LOAD_FORKS, { method: 'GET' });
     if (response && response.length === 0) {
       yield put(loadForksError('No Forks Found'));
-      yield put(loadForksSuccess());
     }
     else {
       response.gistId = action.payload.id;
