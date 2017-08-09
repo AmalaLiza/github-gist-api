@@ -9,7 +9,7 @@ export default class ErrorPopup extends React.Component {
   }
 
   componentDidMount() {
-    window.setTimeout(this.props.hideError, 2000);
+    window.setTimeout(this.props.hideError, 3000);
   }
 
   render() {

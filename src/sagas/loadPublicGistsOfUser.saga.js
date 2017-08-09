@@ -22,7 +22,7 @@ export function* loadPublicGistsOfUser(action) {
     const URL_LOAD_PUBLIC_GISTS = BASE_URL + '/users/' + action.userName + '/gists';
     const response = yield call(request, URL_LOAD_PUBLIC_GISTS, { method: 'GET' });
 
-    if (response.length === 0) {
+    if (response && response.length === 0) {
       yield put(loadPublicGistsOfUserError('No Gists Found'));
       yield put(loadPublicGistsOfUserSuccess());
     }
@@ -31,6 +31,7 @@ export function* loadPublicGistsOfUser(action) {
 
   } catch (error) {
     yield put(loadPublicGistsOfUserError(error));
+    yield put(loadPublicGistsOfUserSuccess());
   }
 }
 
