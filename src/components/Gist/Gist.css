@@ -68,6 +68,7 @@
 .ul {
   min-width: 100px;
   min-height: 50px;
+  font-size: 12px;
   list-style: none;
   position: absolute;
   background-color: rgb(67, 72, 79);
