@@ -1,9 +1,10 @@
-# Github Gist API
+# Github Gist API App
+An Application to list all the public gists of a user by github username and list the file types of the gists. Application shows the users who forked the gists.
 
 ## Guide to run the app
 
 1. Install Node.js
-2. Clone the app
+2. Clone the repo
 3. Install node modules
 4. Run the app
 
@@ -11,29 +12,20 @@
 
 ##### Mac/Linux
 
-Install nvm (Node Version Manager) using
-
-```sh
-curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.4/install.sh | bash
-```
-or <br/>
-```sh
-wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.31.4/install.sh | bash
-```
+Install nvm (Node Version Manager).
 
 Then restart the terminal and type
-```sh
-nvm install 6
 ```
+nvm install 8
+```
+This will install Node v8
 
-This will install Node v6
-
-### 2. Clone the repo 
-```sh
+### 2. Clone the repo
+```
 git clone https://github.com/AmalaLiza/github-gist-api.git
 ```
 
-#### 3. Build
+#### 3. Install node modules
 `cd` into the cloned repo dir
 ```
 cd path-to-cloned-repo
@@ -42,10 +34,13 @@ Pull if you want to get latest changes
 ```
 git pull
 ```
-Then build the app
+Then install node modules
 ```
 npm i
-npm run clean
-npm run build
+```
+#### 4. Run the app
+Start Server
+```
+npm start
 ```
 Then go to `http://localhost:8080` to use the app.

@@ -3,6 +3,7 @@ import * as ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import styles from './Gist.css';
 import { getTag } from './Gist';
+import Tag from '../Tag/Tag';
 
 class List extends Component {
   constructor(props, context) {
@@ -37,7 +38,7 @@ class List extends Component {
 
   componentDidMount() {
     //Binds click action to component.
-    document.addEventListener('click', this.hideAllLists, true);
+    document.addEventListener('click', this.hideAllLists, false);
   }
 
   componentWillUnmount() {
@@ -52,18 +53,20 @@ class List extends Component {
     return <div className={styles.extraTags}>
       <span className={styles.extra}
             onClick={this.showList}>
-        +
+        +{gist.get('files').size - 3}
       </span>
 
-      {gist.get('id') === this.state.showList ? <ul className={styles.ul}>
+      {gist.get('id') === this.state.showList ? <div className={styles.list}>
 
         {gist.get('files').toArray().map((file, index) => {
-          if (index >= 3) return <li key={index}>
-            {file.get('language') && file.get('language').length ? file.get('language') : getTag(file.get('type'))}
-          </li>;
+          if (index >= 3)
+            return <Tag key={index}
+                        value={file.get('language') && file.get('language').length ?
+                          file.get('language') : getTag(file.get('type'))}>
+            </Tag>;
         })}
 
-      </ul> : null}
+      </div> : null}
     </div>;
   }
 }

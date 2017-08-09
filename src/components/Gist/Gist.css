@@ -33,6 +33,7 @@
   color: #ffffff;
   margin: 0 2px;
   border-radius: 5px;
+  border: 1px solid #919496;
 }
 
 .label {
@@ -65,16 +66,13 @@
   position: relative;
 }
 
-.ul {
-  min-width: 100px;
-  min-height: 50px;
-  font-size: 12px;
-  list-style: none;
+.list {
+  min-width: 50px;
+  min-height: 20px;
   position: absolute;
-  background-color: rgb(67, 72, 79);
-  color: white;
+  background-color: rgb(255, 255, 255);
   bottom: 100%;
-  border-radius: 3px;
+  border-radius: 5px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.46);
   padding: 10px;
   margin: 5px;
@@ -82,14 +80,14 @@
 }
 
 .extra {
-  background-color: rgba(61, 66, 73, 0.66);
+  background-color: rgb(145, 148, 150);
+  font-size: 10px;
   cursor: pointer;
-  height: 15px;
-  width: 15px;
-  align-items: center;
+  height: 18px;
+  width: 18px;
   color: white;
-  border-radius: 50%;
+  border-radius: 5px;
   display: inline-block;
   text-align: center;
-  line-height: 15px;
+  line-height: 19px;
 }

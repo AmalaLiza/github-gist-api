@@ -4,7 +4,9 @@
   "description": "A react-redux application to list all the public gists and other details of a user.",
   "main": "index.js",
   "scripts": {
-    "start": "node server.dev.js"
+    "start": "node server.dev.js",
+    "clean": "rimraf ./__build__",
+    "build": "NODE_ENV=production webpack --display-error-details --config webpack.config.js --progress"
   },
   "author": "Amala James",
   "license": "ISC",
