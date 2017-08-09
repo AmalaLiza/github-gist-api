@@ -1,8 +1,6 @@
-# bigbrain-ui
+# Github Gist API
 
 ## Guide to run the app
-
-If already set up jump to step 5, else start with step 1 for first time build.
 
 1. Install Node.js
 2. Clone the app
@@ -32,7 +30,7 @@ This will install Node v6
 
 ### 2. Clone the repo 
 ```sh
-git clone https://github.com/razorthinksoftware/bigbrain-ui.git
+git clone https://github.com/razorthinksoftware/github-gist-api.git
 ```
 
 #### 3. Build
