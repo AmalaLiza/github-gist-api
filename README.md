@@ -30,7 +30,7 @@ This will install Node v6
 
 ### 2. Clone the repo 
 ```sh
-git clone https://github.com/razorthinksoftware/github-gist-api.git
+git clone https://github.com/AmalaLiza/github-gist-api.git
 ```
 
 #### 3. Build
