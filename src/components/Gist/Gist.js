@@ -7,6 +7,7 @@ import Tag from '../Tag/Tag';
 import { loadAllForks } from '../../actions/action-creator';
 import { selectGists } from '../PublicGists/gists.selector';
 import styles from './Gist.css';
+import List from './List';
 
 /**
  * Function to get tag from file type
@@ -17,11 +18,12 @@ import styles from './Gist.css';
  * if file type is application/python, tag will be PYTHON
  **/
 
-const getTag = (type) => {
-  if (type && type.split('/')[1] === 'plain')
+export const getTag = (type) => {
+  const tag = type.split('/')[1];
+  if (tag === 'plain')
     return 'text';
   else
-    return type[1];
+    return tag;
 };
 
 class Gist extends Component {
@@ -31,7 +33,6 @@ class Gist extends Component {
   }
 
   componentWillMount() {
-
     //To dispatch action to load all forks of each gists.
     this.props.dispatch(loadAllForks(this.props.gist.get('forks_url'), this.props.gist.get('id')));
   }
@@ -45,19 +46,23 @@ class Gist extends Component {
       <GistDetails className={styles.detailsContainer}
                    gist={gist} />
 
-      <div className={styles.gistFooter}>
+      <div className={`${styles.gistFooter} clearfix`}>
         <div className={styles.tagWrapper}>
 
           {gist.get('files').toArray().map((file, index) => {
             if (index < 3) return <Tag key={index}
-                                       value={getTag(file.get('type'))}>
+                                       value={file.get('language') && file.get('language').length ?
+                                         file.get('language') : getTag(file.get('type'))}>
             </Tag>;
           })}
+
+          {gist.get('files').size > 3 ? <List gist={gist} /> : null}
 
         </div>
 
         {gist.get('forks') && gist.get('forks').size ? <div className={styles.forksWrapper}>
-
+          <span className={styles.forkIcon}>
+          </span>
           {gist.get('forks').map((fork, index) => <Avatar key={index}
                                                           className={styles.user}
                                                           onClick={() => window.open(fork.getIn(['html_url']))}

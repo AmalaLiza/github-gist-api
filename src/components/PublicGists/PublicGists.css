@@ -1,51 +1,49 @@
+.wrapper {
+  padding: 50px 0 0 80px;
+  position: relative;
+}
+
+.searchBoxWrapper {
+  border-bottom: solid 1px rgba(255, 255, 255, 0.45);;
+}
+
 .searchBox {
-  display: block;
   border: none;
-  padding: 40px;
   outline: none;
   margin-top: 30px;
   width: 100%;
-  box-sizing: border-box;
   color: #FFFFFF;
   font-size: 100px;
   font-weight: 700;
-  background-color: #24292E;
+  background: none;
 }
 
 .searchHint {
   color: #c3c3c3;
   font-size: 16px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  vertical-align: top;
-  padding: 40px;
 }
 
 .gistWrapper {
   display: flex;
   flex-wrap: wrap;
-  padding: 40px;
 }
 
 .gistCount {
-  display: block;
-  padding-left: 40px;
   font-size: 22px;
+  position: relative;
 }
 
-.underline{
-  background-color: rgba(255, 255, 255, 0.45);
-  width: 1209px;
-  height: 1px;
-  margin: 0 0 5px 10px;
+.gistCountHeading {
   display: inline-block;
+  margin: 0;
 }
 
-.inputBorder{
-  background-color: rgba(255, 255, 255, 0.45);
-  width: 1317px;
+.gistCount:after {
+  content: '';
+  position: absolute;
+  left: 140px;
+  right: 0;
   height: 1px;
-  margin: 10px 5px 0 40px;
-  display: inline-block;
+  background: rgba(255, 255, 255, 0.45);
+  top: 50%;
 }

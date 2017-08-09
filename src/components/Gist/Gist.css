@@ -3,24 +3,23 @@
   min-height: 200px;
   background-color: #FFFFFF;
   border-radius: 8px;
-  padding: 10px;
   color: #24292E;
-  margin: 10px 30px 20px 0px;
+  margin: 10px 30px 20px 0;
 }
 
 .detailsContainer {
-  height: 130px;
-  padding: 15px;
+  height: 110px;
+  padding: 25px;
+  overflow: auto;
 }
 
 .gistFooter {
-  padding-top: 14px;
   border-top: 1px solid rgba(36, 41, 46, 0.5);
+  padding: 10px 25px;
 }
 
 .tagWrapper {
   float: left;
-  padding-left: 15px;
 }
 
 .forksWrapper {
@@ -28,12 +27,12 @@
 }
 
 .user {
-  width: 20px;
   height: 20px;
   cursor: pointer;
   background-color: #515151;
   color: #ffffff;
-  margin: 0 2px 0 2px;
+  margin: 0 2px;
+  border-radius: 5px;
 }
 
 .label {
@@ -49,4 +48,47 @@
   display: inline-block;
   padding-bottom: 10px;
   word-break: break-word;
+}
+
+.forkIcon {
+  background-image: url('./../../images/logo.png');
+  background-size: cover;
+  height: 20px;
+  width: 20px;
+  display: inline-block;
+  margin: 0 5px;
+}
+
+.extraTags {
+  display: inline-block;
+  margin-left: 10px;
+  position: relative;
+}
+
+.ul {
+  min-width: 100px;
+  min-height: 50px;
+  list-style: none;
+  position: absolute;
+  background-color: rgb(67, 72, 79);
+  color: white;
+  bottom: 100%;
+  border-radius: 3px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.46);
+  padding: 10px;
+  margin: 5px;
+  transform: translate(-50%, 0);
+}
+
+.extra {
+  background-color: rgba(61, 66, 73, 0.66);
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  align-items: center;
+  color: white;
+  border-radius: 50%;
+  display: inline-block;
+  text-align: center;
+  line-height: 15px;
 }

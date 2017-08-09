@@ -15,7 +15,7 @@ export function loadPublicGistsOfUser(userName) {
   };
 }
 
-export function loadPublicGistsOfUserSuccess(gists, user) {
+export function loadPublicGistsOfUserSuccess(gists = {}, user = {}) {
   return {
     type: ACTION_LOAD_PUBLIC_GISTS_SUCCESS,
     payload: {
