@@ -30,6 +30,8 @@ export function* loadPublicGistsOfUser(action) {
       yield put(loadPublicGistsOfUserSuccess(normalizeItems(response, 'id'), response[0].owner));
 
   } catch (error) {
+    if (error === 'Not Found')
+      error = 'Username not found';
     yield put(loadPublicGistsOfUserError(error));
     yield put(loadPublicGistsOfUserSuccess());
   }
