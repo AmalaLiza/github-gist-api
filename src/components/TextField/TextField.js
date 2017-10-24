@@ -43,14 +43,20 @@ export default class TextField extends React.Component {
       type,
       className,
       defaultValue,
+      placeholder,
       value,
+      onClick,
+      onBlur
     } = this.props;
 
     return (<input type={type}
                    id={id}
                    className={className}
+                   placeholder={placeholder}
                    defaultValue={defaultValue}
                    value={value}
+                   onClick={onClick}
+                   onBlur={onBlur}
                    onKeyDown={this.handleKeyDown}
                    onChange={this.handleChange}
                    autoFocus={true}
