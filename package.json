@@ -1,5 +1,5 @@
 {
-  "name": "sign-up",
+  "name": "github-gist-api",
   "version": "1.0.0",
   "description": "A react-redux application to list all the public gists and other details of a user.",
   "main": "index.js",
@@ -24,7 +24,6 @@
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
     "babel-runtime": "6.23.0",
-    "classnames": "^2.2.5",
     "copy-webpack-plugin": "^4.0.1",
     "css-loader": "^0.28.4",
     "file-loader": "0.11.2",

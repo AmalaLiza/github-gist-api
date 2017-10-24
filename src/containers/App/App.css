@@ -1,17 +1,17 @@
-.wrapper {
-  padding: 30px 100px 100px 100px;
+.background {
+  position: fixed;
+  top: -10%;
+  left: -10%;
+  right: -10%;
+  bottom: -10%;
+  background: url('../../images/background.jpg') no-repeat;
+  background-size: cover;
 }
 
-.header {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-}
-
-.boxContainer {
-  margin-top: 70px;
-  padding-top: 70px;
-  border-top: 1px solid rgb(246, 246, 246);
-  display: flex;
-  justify-content: space-between;
+.background:after{
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(36, 41, 46, 0.85);
 }

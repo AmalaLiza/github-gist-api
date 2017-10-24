@@ -1,22 +1,54 @@
-import { ACTION_HIDE_ERROR, ACTION_SIGN_IN, ACTION_SIGN_IN_ERROR, ACTION_SIGN_IN_SUCCESS } from './actions-constants';
+import {
+  ACTION_LOAD_PUBLIC_GISTS,
+  ACTION_LOAD_PUBLIC_GISTS_SUCCESS,
+  ACTION_LOAD_PUBLIC_GISTS_ERROR,
+  ACTION_LOAD_FORKS,
+  ACTION_LOAD_FORKS_SUCCESS,
+  ACTION_LOAD_FORKS_ERROR,
+  ACTION_HIDE_ERROR,
+} from './actions-constants';
 
-export function signIn(username, password) {
+export function loadPublicGistsOfUser(userName) {
   return {
-    type: ACTION_SIGN_IN,
-    payload: { username, password },
+    type: ACTION_LOAD_PUBLIC_GISTS,
+    userName,
   };
 }
 
-export function signInSuccess(payload) {
+export function loadPublicGistsOfUserSuccess(gists = {}, user = {}) {
   return {
-    type: ACTION_SIGN_IN_SUCCESS,
+    type: ACTION_LOAD_PUBLIC_GISTS_SUCCESS,
+    payload: {
+      gists,
+      user,
+    },
+  };
+}
+
+export function loadPublicGistsOfUserError(error) {
+  return {
+    type: ACTION_LOAD_PUBLIC_GISTS_ERROR,
+    error,
+  };
+}
+
+export function loadAllForks(url, id) {
+  return {
+    type: ACTION_LOAD_FORKS,
+    payload: { url, id },
+  };
+}
+
+export function loadForksSuccess(payload) {
+  return {
+    type: ACTION_LOAD_FORKS_SUCCESS,
     payload,
   };
 }
 
-export function signInError(error) {
+export function loadForksError(error) {
   return {
-    type: ACTION_SIGN_IN_ERROR,
+    type: ACTION_LOAD_FORKS_ERROR,
     error,
   };
 }
