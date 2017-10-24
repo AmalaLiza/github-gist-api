@@ -1,11 +1,9 @@
-import loadPublicGistsOfUser from './sagas/loadPublicGistsOfUser.saga';
-import loadForks from './sagas/loadForks.saga';
+import signIn from './sagas/signIn.saga';
 
 /**
  * Exporting all sagas used for the applications.
  * **/
 
 export default [
-  loadPublicGistsOfUser,
-  loadForks
+  signIn,
 ];
