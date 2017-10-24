@@ -4,9 +4,9 @@ import { connect } from 'react-redux';
 import { signIn } from '../../actions/action-creator';
 import Button from '../Button/Button';
 import TextField from '../TextField/TextField';
-import styles from './SignUp.css';
+import styles from './SignIn.css';
 
-class SignUp extends Component {
+class SignIn extends Component {
 
   constructor(props, context) {
     super(props, context);
@@ -27,7 +27,6 @@ class SignUp extends Component {
       this.setState({
         error_username: true,
       });
-      return;
     }
     if (this.state.password.length === 0) {
       this.setState({
@@ -95,9 +94,9 @@ class SignUp extends Component {
   }
 }
 
-SignUp.propTypes = {};
-SignUp.defaultProps = {};
+SignIn.propTypes = {};
+SignIn.defaultProps = {};
 
 const mapStateToProps = state => (state);
 
-export default connect(mapStateToProps)(SignUp);
+export default connect(mapStateToProps)(SignIn);
