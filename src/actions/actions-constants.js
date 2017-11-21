@@ -1,10 +1,15 @@
 /** Action constants */
 
-export const ACTION_SIGN_IN = 'sp/SIGN_IN_';
-export const ACTION_SIGN_IN_SUCCESS = 'sp/SIGN_IN_SUCCESS';
-export const ACTION_SIGN_IN_ERROR = 'sp/SIGN_IN_ERROR';
-export const ACTION_HIDE_ERROR = 'sp/HIDE_ERROR';
+export const ACTION_LOAD_PUBLIC_GISTS = 'gga/LOAD_PUBLIC_GISTS';
+export const ACTION_LOAD_PUBLIC_GISTS_SUCCESS = 'gga/LOAD_PUBLIC_GISTS_SUCCESS';
+export const ACTION_LOAD_PUBLIC_GISTS_ERROR = 'gga/LOAD_PUBLIC_GISTS_ERROR';
+
+export const ACTION_LOAD_FORKS = 'gga/LOAD_FORKS';
+export const ACTION_LOAD_FORKS_SUCCESS = 'gga/LOAD_FORKS_SUCCESS';
+export const ACTION_LOAD_FORKS_ERROR = 'gga/LOAD_FORKS_ERROR';
+
+export const ACTION_HIDE_ERROR = 'gga/HIDE_ERROR';
 
 /** Urls
  **/
-export const URL_SIGN_IN = 'https://login';
+export const BASE_URL = 'https://api.github.com';
