@@ -19,6 +19,7 @@ const startServer = (module) => {
     hot: true,
     historyApiFallback: true,
     stats: { colors: true },
+    //proxy: { '/gists/*': module.proxy },
   }).listen(port, '0.0.0.0', (err) => {
     if (err) { console.error(err); }
 
