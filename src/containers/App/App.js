@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import Box from '../../components/Box/Box';
 import Logo from '../../components/Logo/Logo';
 import SearchBox from '../../components/SearchBox/SearchBox';
-import SignUp from '../../components/SignIn/SignIn';
+import SignUp from '../../components/SignUp/SignUp';
 import '../../global.css';
 import styles from './App.css';
 

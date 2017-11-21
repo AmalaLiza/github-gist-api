@@ -1,7 +1,7 @@
 {
-  "name": "sign-in",
+  "name": "sign-up",
   "version": "1.0.0",
-  "description": "A simple sign in page",
+  "description": "A react-redux application to list all the public gists and other details of a user.",
   "main": "index.js",
   "scripts": {
     "start": "node server.dev.js",

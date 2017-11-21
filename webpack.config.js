@@ -15,7 +15,7 @@ const getConfig = (moduleName, port) => ({
     ],
   },
   output: {
-    path: `${__dirname}/__build__`,
+    path: `${__dirname}/__build_${moduleName}__`,
     filename: '[name].js',
     chunkFilename: '[name].chunk.js',
     publicPath: '/',

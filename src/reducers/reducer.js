@@ -1,6 +1,6 @@
 import { fromJS } from 'immutable';
 import {
-  ACTION_SIGN_IN_ERROR,
+  ACTION_SIGN_UP_ERROR,
   ACTION_HIDE_ERROR,
 } from '../actions/actions-constants';
 
@@ -14,7 +14,7 @@ export function reducer(state = initialState, action) {
 
   switch (action.type) {
 
-    case ACTION_SIGN_IN_ERROR:
+    case ACTION_SIGN_UP_ERROR:
       return state.set('publicGists', fromJS(action.payload.gists));
 
     case ACTION_HIDE_ERROR:

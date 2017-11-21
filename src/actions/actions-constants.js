@@ -7,4 +7,4 @@ export const ACTION_HIDE_ERROR = 'sp/HIDE_ERROR';
 
 /** Urls
  **/
-export const URL_SIGN_IN = 'https://url/login';
+export const URL_SIGN_IN = 'https://login';
